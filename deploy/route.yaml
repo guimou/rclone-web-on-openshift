@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: rclone
+  labels:
+    app: rclone
+    app.kubernetes.io/component: rclone
+    app.kubernetes.io/instance: rclone
+    app.kubernetes.io/part-of: rclone-app
+spec:
+  to:
+    kind: Service
+    name: rclone
+    weight: 100
+  port:
+    targetPort: 5572-tcp
+  wildcardPolicy: None

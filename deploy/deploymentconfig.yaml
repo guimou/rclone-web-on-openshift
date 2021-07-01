@@ -1,0 +1,68 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: rclone
+  labels:
+    app: rclone
+    app.kubernetes.io/component: rclone
+    app.kubernetes.io/instance: rclone
+    app.kubernetes.io/part-of: rclone-app
+    app.openshift.io/runtime-namespace: rclone
+spec:
+  strategy:
+    type: Rolling
+    rollingParams:
+      updatePeriodSeconds: 1
+      intervalSeconds: 1
+      timeoutSeconds: 600
+      maxUnavailable: 25%
+      maxSurge: 25%
+    resources: {}
+    activeDeadlineSeconds: 21600
+  triggers:
+    - type: ConfigChange
+  replicas: 1
+  revisionHistoryLimit: 10
+  test: false
+  selector:
+    app: rclone
+    deploymentconfig: rclone
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rclone
+    spec:
+      volumes:
+        - name: rclone-config
+          persistentVolumeClaim:
+            claimName: rclone-config
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: rclone
+          command:
+            - rclone
+          ports:
+            - containerPort: 5572
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: rclone-config
+              mountPath: /opt/rclone-config
+          terminationMessagePolicy: File
+          image: quay.io/guimou/rclone-ubi8:v0.0.1
+          args:
+            - rcd
+            - '--rc-web-gui'
+            - '--rc-user=admin'
+            - '--rc-pass=pass'
+            - '--rc-serve'
+            - '--cache-dir=/tmp'
+            - '--rc-addr=:5572'
+            - '--config=/opt/rclone-config/rclone.conf'
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
