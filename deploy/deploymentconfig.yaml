@@ -60,6 +60,7 @@ spec:
             - '--rc-serve'
             - '--cache-dir=/tmp'
             - '--rc-addr=:5572'
+            - '--s3-v2-auth'
             - '--config=/opt/rclone-config/rclone.conf'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
