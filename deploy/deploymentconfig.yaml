@@ -24,9 +24,6 @@ spec:
   replicas: 1
   revisionHistoryLimit: 10
   test: false
-  selector:
-    app: rclone
-    deploymentconfig: rclone
   template:
     metadata:
       creationTimestamp: null
