@@ -9,6 +9,7 @@ mkdir -p /opt/app-root/src/.rclone-config
 
 # Start server
 start_process rclone rcd \
+    --rc-web-gui \
     --rc-web-gui-no-open-browser \
     --rc-user=$RC_ADMIN_USER \
     --rc-pass=$RC_ADMIN_PASS \
