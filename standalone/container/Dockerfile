@@ -15,11 +15,14 @@ RUN curl -OL https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
     mkdir -p /tmp/webgui/current && \
     unzip currentbuild.zip -d /tmp/webgui/current/ && \
     echo "v2.0.5" > /tmp/webgui/tag && \
+    chown -R 1001:0 /tmp/webgui && \
     rm currentbuild.zip
 
 # Launcher
 COPY utils utils/
 COPY run-rclone.sh ./
+
+USER 1001
 
 WORKDIR /opt/app-root/src
 
