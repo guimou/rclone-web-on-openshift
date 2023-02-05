@@ -2,6 +2,8 @@ FROM registry.access.redhat.com/ubi9/s2i-core
 
 WORKDIR /opt/app-root/bin
 
+# Install Rclone
+
 RUN curl -OL https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
     unzip rclone-current-linux-amd64.zip && \
     cd rclone-*-linux-amd64 && \
@@ -18,7 +20,7 @@ RUN curl -OL https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
     chown -R 1001:0 /tmp/webgui && \
     rm currentbuild.zip
 
-# Launcher
+# Install launcher
 COPY utils utils/
 COPY run-rclone.sh ./
 
