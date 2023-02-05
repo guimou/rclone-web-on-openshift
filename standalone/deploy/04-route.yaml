@@ -14,4 +14,7 @@ spec:
     weight: 100
   port:
     targetPort: 5572-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None

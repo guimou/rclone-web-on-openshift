@@ -11,8 +11,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-  matchLabels:
-    app: rclone
+    matchLabels:
+      app: rclone
   template:
     metadata:
       creationTimestamp: null
@@ -35,7 +35,12 @@ spec:
             - name: rclone-config
               mountPath: /opt/app-root/src/.rclone-config
           terminationMessagePolicy: File
-          image: quay.io/guimou/rclone-ubi8:v0.0.1
+          image: quay.io/guimou/rclone-web-openshift:standalone_latest
+          env:
+            - name: RC_ADMIN_USER
+              value: admin
+            - name: RC_ADMIN_PASS
+              value: changeme
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst

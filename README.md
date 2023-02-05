@@ -20,11 +20,11 @@ TIP: Because the minimal size allowed by the dashboard for a storage volume is c
 
 - Create a project/namespace for your installation.
 - From the `deploy` folder, apply the different YAML files:
-  - `pvc.yaml`: creates a persistent volume to hold the configuration
-  - `deployment.yaml`: creates the deployment. Modify admin account and password if you want to restrict access. **You should!**
-  - `service.yaml`, `route.yaml`: create the external access so that you can connect to the Web UI.
+  - `01-pvc.yaml`: creates a persistent volume to hold the configuration
+  - `02-deployment.yaml`: creates the deployment. Modify admin account and password if you want to restrict access. **You should!**
+  - `03-service.yaml`, `04-route.yaml`: create the external access so that you can connect to the Web UI.
   - **Optionally**, to create a tile on the ODH/RHODS dashboard:
-    - modify the `tile.yaml` file with the address of the Route that was created previously.
+    - modify the `05-tile.yaml` file with the address of the Route that was created previously (namespace and name of the Route object).
     - the will appear under the available applications in the dashboard. Select it and click on "Enable" to make it appear in the "Enabled" menu.
 
 ## Usage
