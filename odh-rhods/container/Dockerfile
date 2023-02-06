@@ -80,7 +80,7 @@ COPY nginx/api/ /opt/app-root/api/
 
 # Install launcher
 COPY utils utils/
-COPY run-rclone.sh ./
+COPY run-rclone.sh run-nginx.sh ./
 
 USER 1001
 

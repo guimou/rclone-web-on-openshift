@@ -18,8 +18,7 @@ echo '[{"id":"code-server","name":"code-server","last_activity":"'$(date -Isecon
 start_process rclone rcd \
     --rc-web-gui \
     --rc-web-gui-no-open-browser \
-    --rc-user=$RC_ADMIN_USER \
-    --rc-pass=$RC_ADMIN_PASS \
+    --rc-no-auth \
     --rc-serve \
     --cache-dir=/tmp \
     --rc-addr=:5572 \

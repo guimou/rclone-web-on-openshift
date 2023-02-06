@@ -20,7 +20,7 @@ build:
 
 validate:
 	@required_commands=$(REQUIRED_RUNTIME_IMAGE_COMMANDS) ; \
-	IMAGE=rclone-web-openshift:standalone_$(RELEASE) ; \
+	IMAGE=rclone-web-openshift:odh-rhods_$(RELEASE) ; \
 	if [[ $$IMAGE == "" ]] ; then \
 		echo "Usage: make validate IMAGE=<container-image-name>" ; \
 		exit 1 ; \
