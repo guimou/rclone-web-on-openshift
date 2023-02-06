@@ -1,0 +1,78 @@
+apiVersion: dashboard.opendatahub.io/v1
+kind: OdhApplication
+metadata:
+  annotations:
+    opendatahub.io/categories: 'Data transfer'
+  name: rclone
+  namespace: redhat-ods-applications
+  labels:
+    app: odh-dashboard
+    app.kubernetes.io/part-of: odh-dashboard
+spec:
+  enable:
+    validationConfigMap: rclone-enable
+  img: >-
+    <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 173.85 40" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/">
+        <g transform="matrix(.76923 0 0 .76923 -230.77 -445.38)">
+            <g id="logo_on_light__horizontal_color" transform="matrix(.87938 0 0 .61905 287.69 220.57)">
+                <rect x="14" y="579" width="257" height="84" fill="none"/>
+                <clipPath id="_clip1">
+                    <rect x="14" y="579" width="257" height="84"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(2.8773 0 0 4.0874 1538.9 344.22)" serif:id="Layer 1">
+                        <g transform="translate(-15.899 -32.187)">
+                            <g transform="matrix(.3065 0 0 .3065 -493.56 108.22)">
+                                <path d="m0-26.524c-2.206-3.821-5.416-6.701-9.105-8.499-0.472 2.52-1.365 5.004-2.718 7.348l-2.135 3.705c1.422 0.79 2.66 1.953 3.533 3.465 2.565 4.442 1.042 10.124-3.401 12.689-4.442 2.565-10.124 1.043-12.689-3.4l-4.308-7.45h-6.952l-3.476 6.02 4.311 7.449c5.89 10.201 18.933 13.696 29.134 7.806 10.2-5.889 13.695-18.932 7.806-29.133" fill="#70caf2" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -500.11 99.916)">
+                                <path d="m0-30.703c-10.201-5.889-23.244-2.394-29.133 7.806-2.207 3.821-3.095 8.041-2.808 12.135 2.418-0.851 5.016-1.32 7.723-1.32l4.275-4e-3c-0.027-1.626 0.362-3.28 1.234-4.791 2.566-4.443 8.247-5.966 12.69-3.4 4.443 2.565 5.965 8.246 3.4 12.689l-4.297 7.456 3.475 6.021 6.952-1e-3 4.295-7.458c5.89-10.2 2.395-23.244-7.806-29.133" fill="#b4e3f9" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -505.42 99.786)">
+                                <path d="m0 23.335-2.142-3.701c-1.395 0.837-3.021 1.327-4.766 1.327-5.131 0-9.29-4.159-9.29-9.29 0-5.13 4.159-9.289 9.29-9.289l8.605-6e-3 3.477-6.02-3.477-6.02-8.606 8e-3c-11.779 0-21.327 9.549-21.327 21.327 0 11.779 9.548 21.328 21.327 21.328 4.411 0 8.508-1.34 11.909-3.633-1.946-1.669-3.647-3.688-5-6.031" fill="#3f79ad" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -482.71 99.41)">
+                                <path d="m0 1.359c6.116 0 10.664-3.084 10.664-8.364v-0.104c0-4.914-3.869-7.998-10.507-7.998h-12.494v16.466zm-15.055-18.976h15.369c4.495 0 8.102 1.412 10.298 3.608 1.725 1.725 2.77 4.181 2.77 6.795v0.105c0 6.116-4.547 9.618-10.716 10.455l12.075 15.63h-3.45l-11.657-15.16h-11.971v15.16h-2.718z" fill="#050000" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -477.52 99.586)">
+                                <path d="m0 0.209v-0.104c0-10.403 7.841-18.924 19.08-18.924 6.9 0 11.03 2.3 14.428 5.646l-5.123 5.907c-2.823-2.562-5.698-4.13-9.357-4.13-6.169 0-10.612 5.123-10.612 11.396v0.105c0 6.273 4.339 11.5 10.612 11.5 4.182 0 6.743-1.673 9.618-4.287l5.124 5.175c-3.765 4.026-7.947 6.535-15.004 6.535-10.768 0-18.766-8.312-18.766-18.819" fill="#050000" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -466.16 105.23)">
+                                <path d="m0-36.592h8.05v29.274h18.244v7.318h-26.294z" fill="#050000" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -449 99.586)">
+                                <path d="m0 0.209v-0.104c0-6.273-4.599-11.501-11.082-11.501-6.481 0-10.978 5.123-10.978 11.396v0.105c0 6.273 4.601 11.5 11.083 11.5s10.977-5.123 10.977-11.396m-30.475 0v-0.104c0-10.403 8.207-18.924 19.498-18.924s19.393 8.416 19.393 18.819v0.105c0 10.402-8.206 18.923-19.498 18.923-11.291 0-19.393-8.416-19.393-18.819" fill="#050000" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -445.19 105.23)">
+                                <path d="m0-36.592h7.424l17.146 22.53v-22.53h7.945v36.592h-6.848l-17.72-23.262v23.262h-7.947z" fill="#050000" fill-rule="nonzero"/>
+                            </g>
+                            <g transform="matrix(.3065 0 0 .3065 -433.49 105.23)">
+                                <path d="m0-36.592h27.601v7.162h-19.604v7.422h17.251v7.162h-17.251v7.684h19.865v7.162h-27.862z" fill="#050000" fill-rule="nonzero"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </svg>
+  getStartedLink: 'https://rclone.org/gui/'
+  route: rclone
+  routeNamespace: rclone
+  displayName: Rclone
+  kfdefApplications: []
+  support: third party support
+  csvName: ''
+  provider: Rclone
+  docsLink: 'https://rclone.org/'
+  quickStart: ''
+  getStartedMarkDown: >-
+    # Rclone
+
+    Rclone is a command-line program to manage files on cloud storage. It is a feature-rich alternative to cloud vendors' web storage interfaces. Over 40 cloud storage products support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
+
+    Rclone has powerful cloud equivalents to the unix commands rsync, cp, mv, mount, ls, ncdu, tree, rm, and cat. Rclone's familiar syntax includes shell pipeline support, and --dry-run protection. It is used at the command line, in scripts or via its API.
+
+    Users call rclone "The Swiss army knife of cloud storage", and "Technology indistinguishable from magic".
+  description: >-
+    Rclone is a program to manage files on cloud storage.
+  category: Self-managed
