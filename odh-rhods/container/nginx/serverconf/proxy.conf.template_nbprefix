@@ -2,12 +2,12 @@
 # api calls from probes get to CGI processing
 ###############
 location = ${NB_PREFIX}/api {
-    return 301 /api/;
+    return 302 /api/;
     access_log  off;
 }
 
 location ${NB_PREFIX}/api/ {
-    return 301 /api/;
+    return 302 /api/;
     access_log  off;
 }
 
@@ -27,12 +27,12 @@ location /api/ {
 # api calls from culler get to CGI processing
 ###############
 location = ${NB_PREFIX}/api/kernels {
-    return 301 $scheme://$http_host/api/kernels/;
+    return 302 $scheme://$http_host/api/kernels/;
     access_log  off;
 }
 
 location ${NB_PREFIX}/api/kernels/ {
-    return 301 $scheme://$http_host/api/kernels/;
+    return 302 $scheme://$http_host/api/kernels/;
     access_log  off;
 }
 
@@ -52,19 +52,19 @@ location /api/kernels/ {
 # root and prefix get to Rclone endpoint
 ###############
 location = ${NB_PREFIX} {
-    return 301 $scheme://$http_host/rclone/;
+    return 302 $scheme://$http_host/rclone/;
 }
 
 location ${NB_PREFIX}/ {
-    return 301 $scheme://$http_host/rclone/;
+    return 302 $scheme://$http_host/rclone/;
 }
 
 location = /rclone {
-    return 301 $scheme://$http_host/rclone/;
+    return 302 $scheme://$http_host/rclone/;
 }
 
 location = / {
-    return 301 $scheme://$http_host/rclone/;
+    return 302 $scheme://$http_host/rclone/;
 }
 
 location /rclone/ {

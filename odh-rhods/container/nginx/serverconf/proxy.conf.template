@@ -13,7 +13,7 @@ location /api/ {
 }
 
 location = /api/kernels {
-    return 301 $scheme://$http_host/api/kernels/;
+    return 302 $scheme://$http_host/api/kernels/;
     access_log  off;
 }
 
@@ -33,11 +33,11 @@ location /api/kernels/ {
 # api calls from culler get to CGI processing
 ###############
 location = / {
-    return 301 $scheme://$http_host/rclone/;
+    return 302 $scheme://$http_host/rclone/;
 }
 
 location = /rclone {
-    return 301 $scheme://$http_host/rclone/;
+    return 302 $scheme://$http_host/rclone/;
 }
 
 location /rclone/ {
